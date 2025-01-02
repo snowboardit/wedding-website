@@ -1,8 +1,8 @@
 // Imports
-@import "partials/typography";
-@import "partials/buttons";
-@import "partials/colors";
-@import "partials/layout";
+@use "partials/typography";
+@use "partials/buttons";
+@use "partials/layout";
+@use "partials/colors" as *;
 
 // Google Fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800)");
@@ -42,8 +42,8 @@ a:focus {
   text-decoration: none;
 }
 body {
-  font-family: $sans-serif;
-  font-weight: $light;
+  font-family: typography.$sans-serif;
+  font-weight: typography.$light;
   color: $txt-primary;
   -webkit-text-size-adjust: 100%;
   //fix for iOS
@@ -63,10 +63,10 @@ section .header {
   padding-bottom: 30px;
 }
 .section-padding {
-  padding: $section-padding;
+  padding: layout.$section-padding;
 }
 .event-padding {
-  padding: $event-padding;
+  padding: layout.$event-padding;
 }
 .section-border {
   border-bottom: 1px solid $keyline-color;
@@ -338,7 +338,7 @@ header {
   a {
     color: $txt-light;
     text-transform: uppercase;
-    font-size: $nav-font-size;
+    font-size: typography.$nav-font-size;
 
     &.login {
       margin-right: 20px;
@@ -550,7 +550,7 @@ Features-stack
   position: relative;
 
   i {
-    font-family: $accent-font;
+    font-family: typography.$accent-font;
     font-weight: 300;
     font-size: 25px;
     color: #f69d52;
@@ -617,9 +617,9 @@ Features-stack
     transition: all 300ms ease-in-out;
   }
   h2 {
-    font-size: $blog-post-title;
+    font-size: typography.$blog-post-title;
     color: $txt-accent;
-    font-weight: $semibold;
+    font-weight: typography.$semibold;
     text-transform: uppercase;
     margin-top: 35px;
   }
