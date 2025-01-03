@@ -403,13 +403,6 @@ header {
 }
 
 /* ==========================================================================
-Social share buttons
-========================================================================== */
-.share-bar {
-  margin-top: 20px;
-}
-
-/* ==========================================================================
 Intro
 ========================================================================== */
 .intro span.icon {
@@ -582,6 +575,8 @@ Features-stack
 .events
 ========================================================================== */
 .events {
+  position: relative;
+
   .leftcol {
     padding-right: 100px;
     border-right: solid 1px $keyline-color;
@@ -599,6 +594,43 @@ Features-stack
 
   p.time {
     padding-bottom: 0;
+  }
+
+  #events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::after,
+    &::before {
+      content: unset;
+    }
+
+    img {
+      width: 150px;
+      height: 125px;
+    }
+
+    @media (min-width: 620px) {
+      img {
+        width: 175px;
+        height: 150px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      img {
+        width: 200px;
+        height: 175px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      img {
+        width: 250px;
+        height: 225px;
+      }
+    }
   }
 }
 
