@@ -65,9 +65,7 @@ section .header {
 .section-padding {
   padding: layout.$section-padding;
 }
-.event-padding {
-  padding: layout.$event-padding;
-}
+
 .section-border {
   border-bottom: 1px solid $keyline-color;
 }
