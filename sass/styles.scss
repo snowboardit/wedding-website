@@ -583,15 +583,27 @@ Features-stack
     padding-left: 100px;
   }
 
-  .time {
-    font-size: 13px;
-    font-style: italic;
-    text-transform: lowercase;
-    color: $txt-primary;
-  }
+  .attrs {
+    margin-bottom: 10px;
 
-  p.time {
-    padding-bottom: 0;
+    .attr {
+      font-size: 14px;
+      font-style: italic;
+      // text-transform: lowercase;
+      color: $txt-primary;
+    }
+
+    p {
+      &.attr {
+        i {
+          font-size: 16px;
+          margin-right: 5px;
+        }
+
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
   }
 
   #events-header {
