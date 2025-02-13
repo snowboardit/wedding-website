@@ -9,6 +9,10 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic)");
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,300,700)");
 
+// Font Awesome
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/solid.scss";
+
 /* ==========================================================================
 Global Styles
 ========================================================================== */
@@ -589,19 +593,25 @@ Features-stack
     .attr {
       font-size: 14px;
       font-style: italic;
-      // text-transform: lowercase;
       color: $txt-primary;
     }
 
     p {
       &.attr {
         i {
+          font-style: normal;
           font-size: 16px;
-          margin-right: 5px;
+          margin-right: 8px;
         }
 
         padding-bottom: 0;
         margin-bottom: 0;
+      }
+
+      &.attire {
+        i {
+          margin-right: 4px;
+        }
       }
     }
   }
