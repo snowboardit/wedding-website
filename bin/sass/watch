@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Watching sass/scss for changes..."
+node_modules/gulp/bin/gulp.js "sass:watch"
