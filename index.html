@@ -7,141 +7,121 @@
 <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
-    <!--<![endif]-->
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Max & Erica 2025</title>
-        <meta name="description" content="You are invited to our big day!" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta property="og:title" content="Max & Erica 2025" />
-        <meta
-            property="og:description"
-            content="You are invited to our big day!"
-        />
-        <!-- replace image -->
-        <meta
-            property="og:image"
-            content="https://maxerica.love/img/hero-min.jpg"
-        />
-        <meta property="og:type" content="website" />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="apple-touch-icon.png"
-        />
-        <link rel="manifest" href="manifest.json" />
+<!--<![endif]-->
 
-        <script>
-            // load css files from CDN if local node_modules fail
-            function loadCssFromCDN(css) {
-                // create new link tag
-                const link = document.createElement("link");
-                if (css === "animate.css") {
-                    link.href =
-                        "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css";
-                } else if (css === "font-awesome.css") {
-                    link.href =
-                        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
-                }
-                link.rel = "stylesheet";
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Max & Erica 2025</title>
+    <meta name="description" content="You are invited to our big day!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="Max & Erica 2025" />
+    <meta property="og:description" content="You are invited to our big day!" />
+    <!-- replace image -->
+    <meta property="og:image" content="https://maxerica.love/img/hero-min.jpg" />
+    <meta property="og:type" content="website" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
 
-                // add link tag to head section
-                document.getElementsByTagName("head")[0].appendChild(link);
+    <script>
+        // load css files from CDN if local node_modules fail
+        function loadCssFromCDN(css) {
+            // create new link tag
+            const link = document.createElement("link");
+            if (css === "animate.css") {
+                link.href =
+                    "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css";
+            } else if (css === "font-awesome.css") {
+                link.href =
+                    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
             }
+            link.rel = "stylesheet";
 
-            // load js files from CDN if local node_modules fail
-            function loadJsFromCDN(js) {
-                if (js === "waypoints.js") {
-                    document.write(
-                        '<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>'
-                    );
-                } else if (js === "jquery.js") {
-                    document.write(
-                        '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>'
-                    );
-                }
+            // add link tag to head section
+            document.getElementsByTagName("head")[0].appendChild(link);
+        }
+
+        // load js files from CDN if local node_modules fail
+        function loadJsFromCDN(js) {
+            if (js === "waypoints.js") {
+                document.write(
+                    '<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>'
+                );
+            } else if (js === "jquery.js") {
+                document.write(
+                    '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>'
+                );
             }
-        </script>
+        }
+    </script>
 
-        <link rel="stylesheet" href="css/normalize.min.css" />
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/jquery.fancybox.css" />
-        <link rel="stylesheet" href="css/flexslider.css" />
-        <link rel="stylesheet" href="css/styles.min.css" />
-        <link rel="stylesheet" href="css/queries.css" />
-        <link
-            rel="stylesheet"
-            href="node_modules/animate.css/animate.min.css"
-            onerror="loadCssFromCDN('animate.css')"
-        />
-        <link
-            rel="stylesheet"
-            href="node_modules/font-awesome/css/font-awesome.min.css"
-            onerror="loadCssFromCDN('font-awesome.css')"
-        />
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body id="top">
-        <!--[if lt IE 8]>
+    <link rel="stylesheet" href="css/normalize.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="css/flexslider.css" />
+    <link rel="stylesheet" href="css/styles.min.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"
+        onerror="loadCssFromCDN('font-awesome.css')" />
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body id="top">
+    <!--[if lt IE 8]>
             <p class="browserupgrade">
                 You are using an <strong>outdated</strong> browser. Please
                 <a href="https://browsehappy.com/">upgrade your browser</a> to
                 improve your experience.
             </p>
         <![endif]-->
-        <section class="hero">
-            <section class="navigation">
-                <header>
-                    <div class="header-content">
-                        <div class="logo">
-                            <a href="#"
-                                ><img src="img/logo.png" alt="Logo"
-                            /></a>
-                        </div>
-                        <div class="header-nav">
-                            <nav>
-                                <ul class="primary-nav">
-                                    <li><a href="#invitation">Info</a></li>
-                                    <li><a href="#eng-pics">Engagement</a></li>
-                                    <li><a href="#events">Events</a></li>
-                                    <li>
-                                        <a href="#where" class="login">Location</a>
-                                    </li>
-                                </ul>
-                                <ul class="member-actions">
-                                    <!-- <li>
+    <section class="hero">
+        <section class="navigation">
+            <header>
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="#"><img src="img/logo.png" alt="Logo" /></a>
+                    </div>
+                    <div class="header-nav">
+                        <nav>
+                            <ul class="primary-nav">
+                                <li><a href="#invitation">Info</a></li>
+                                <li><a href="#eng-pics">Engagement</a></li>
+                                <li><a href="#events">Events</a></li>
+                                <li>
+                                    <a href="#where" class="login">Location</a>
+                                </li>
+                            </ul>
+                            <ul class="member-actions">
+                                <!-- <li>
                                         <a
                                             href="#rsvp"
                                             class="btn-white btn-small"
                                             >RSVP</a
                                         >
                                     </li> -->
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="navicon">
-                            <a class="nav-toggle" href="#"><span></span></a>
-                        </div>
+                            </ul>
+                        </nav>
                     </div>
-                </header>
-            </section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <div class="text-center hero-content">
-                            <!--<h1>Max and Erica</h1>-->
-                            <img
-                                alt="max and erica logo"
-                                src="img/logo-lg.png"
-                            />
-                            <!--<p class="intro">Max & Erica are getting hitched!</p>-->
-                            <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
-                        </div>
+                    <div class="navicon">
+                        <a class="nav-toggle" href="#"><span></span></a>
                     </div>
                 </div>
-                <!-- <div class="row">
+            </header>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="text-center hero-content">
+                        <!--<h1>Max and Erica</h1>-->
+                        <img alt="max and erica logo" src="img/logo-lg.png" />
+                        <!--<p class="intro">Max & Erica are getting hitched!</p>-->
+                        <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
                     <div class="col-sm-4 hidden-xs"></div>
                     <div class="text-center col-sm-4 hidden-xs">
                         <a
@@ -152,321 +132,314 @@
                     </div>
                     <div class="col-sm-4 hidden-xs"></div>
                 </div> -->
-            </div>
-            <div class="down-arrow floating-arrow">
-                <a href="#invitation"><i class="fa fa-angle-down"></i></a>
-            </div>
-        </section>
+        </div>
+        <div class="down-arrow floating-arrow">
+            <a href="#invitation"><i class="fa fa-angle-down"></i></a>
+        </div>
+    </section>
 
-        <section id="invitation" class="section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="text-center col-md-2"></div>
-                    <div class="text-center col-md-8">
-                        <h2 class="header">We're getting hitched!</h2>
-                        <p>
-                            Please celebrate with us for a long and relaxing
-                            weekend at
-                            <strong>Sugarloaf Ski Resort</strong> in
-                            <a href="#map-canvas">Carrabassett Valley</a>, Maine
-                            from
-                            <strong>Thursday, April 10th </strong>to<strong>
-                                Sunday, April 13th</strong
-                            >. We will ski, snowboard, enjoy a catered dinner
-                            with close family and friends and more. The annual
-                            Reggae Festival will be in full effect with good
-                            vibes, live music, and food trucks during our stay.
-                        </p>
-                    </div>
-                    <div class="text-center col-md-2"></div>
+    <section id="invitation" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-md-2"></div>
+                <div class="text-center col-md-8">
+                    <h2 class="header">We're getting hitched! &#128141;<!-- engagement ring --></h2>
+                    <p>
+                        Please celebrate with us for a fun and relaxing weekend at
+                        <strong>Sugarloaf Ski Resort</strong> in Carrabassett Valley, Maine
+                        from
+                        <strong>Friday, April 11th </strong>to<strong>
+                            Sunday, April 13th</strong>. We will ski, snowboard, enjoy a catered dinner,
+                        spend time with close family/friends, and celebrate the next chapter of Max and Erica.
+                    </p>
+                    <p>
+                        Running parallel to our celebration is the annual
+                        <a href="https://www.sugarloaf.com/events/reggae-festival">
+                            Sugarloaf Reggae Festival
+                        </a>. Good vibes, live music,
+                        and food trucks will be in full effect. Sugarloaf village
+                        restaurants and shops will also be operating as usual. Max and
+                        Erica recommend <a href="https://www.dellies.net/">D'Ellies Bakery & Deli</a> for
+                        breakfast/lunch, <a href="https://www.thebagandkettle.com/">The Bag</a> or
+                        <a href="https://www.facebook.com/profile.php?id=100063488742860">The Rack</a> for dinner,
+                        and <a href="https://eighty8donuts.squarespace.com/sugarloaf">Eighty8 Donuts</a>
+                        for a sweet treat.
+                    </p>
                 </div>
+                <div class="text-center col-md-2"></div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="intro" class="section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 hidden-sm hidden-xs">
-                        <img
-                            alt="max and erica left"
-                            src="img/maxerica_1.png"
-                            class="wp1"
-                        />
-                    </div>
-                    <div class="col-md-6">
-                        <div class="text-center col-md-12">
-                            <h2 class="header">How we met</h2>
-                        </div>
-                        <p>
-                            Max and Erica met at the University of Maine in
-                            2018. Max was studying computer science and Erica
-                            was studying economics and math. They met through
-                            Tinder when Max asked to take Erica up for an
-                            airplane ride. Erica said no, telling Max her mother
-                            told her not to get into a stranger's airplane.
-                            Instead, they ran an errand together then watched
-                            The Office. They hit it off immediately, finding
-                            common interests in snowboarding, life experiences,
-                            ambition, and humor. Today, they live on a small
-                            farm with their dog, cats, and horses. Their love
-                            for one another grows stronger each day.
-                        </p>
-                    </div>
-                    <div class="col-md-3 hidden-sm hidden-xs">
-                        <img
-                            alt="max and erica right"
-                            src="img/maxerica_2.png"
-                            class="wp2"
-                        />
-                    </div>
+    <section id="intro" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <img alt="max and erica left" src="img/maxerica_1.png" class="wp1" />
                 </div>
-                <div class="row">
-                    <div
-                        class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"
-                    >
-                        <img src="img/maxerica_1.png" class="wp8" />
-                    </div>
-                    <div
-                        class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"
-                    >
-                        <img src="img/maxerica_2.png" class="wp9" />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="eng-pics" class="section-padding">
-            <div class="container-fluid">
-                <div class="row">
+                <div class="col-md-6">
                     <div class="text-center col-md-12">
-                        <h2 class="header">Engagement Pics</h2>
+                        <h2 class="header">How we met</h2>
                     </div>
+                    <p>
+                        Max and Erica met at the University of Maine in
+                        2018. Max was studying computer science and Erica
+                        was studying economics and math. They met through
+                        Tinder when Max asked to take Erica up for an
+                        airplane ride. Erica said no, telling Max her mother
+                        told her not to get into a stranger's airplane.
+                        Instead, they ran an errand together, then watched
+                        The Office (US). They hit it off immediately, finding
+                        common interests in snowboarding, life experiences,
+                        ambition, and humor. Today, they live on a small
+                        farm with their dog, cats, and horses. Their love
+                        for one another grows stronger each day.
+                    </p>
                 </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <a
-                            class="fancybox"
-                            rel="group"
-                            href="img/eng_pics/eng_1.jpg"
-                        >
-                            <div class="img-wrap">
-                                <div class="overlay">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <img src="img/eng_pics/eng_1.jpg" alt="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a
-                            class="fancybox"
-                            rel="group"
-                            href="img/eng_pics/eng_2.jpg"
-                        >
-                            <div class="img-wrap">
-                                <div class="overlay">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <img src="img/eng_pics/eng_2.jpg" alt="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a
-                            class="fancybox"
-                            rel="group"
-                            href="img/eng_pics/eng_3.jpg"
-                        >
-                            <div class="img-wrap">
-                                <div class="overlay">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <img src="img/eng_pics/eng_3.jpg" alt="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a
-                            class="fancybox"
-                            rel="group"
-                            href="img/eng_pics/eng_4.jpg"
-                        >
-                            <div class="img-wrap">
-                                <div class="overlay">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <img src="img/eng_pics/eng_4.jpg" alt="" />
-                            </div>
-                        </a>
-                    </div>
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <img alt="max and erica right" src="img/maxerica_2.png" class="wp2" />
                 </div>
             </div>
-            <div class="container">
-                <div class="row hidden-lg hidden-md hidden-xs">
-                    <div class="col-xs-12 section-border section-padding"></div>
+            <div class="row">
+                <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg">
+                    <img src="img/maxerica_1.png" class="wp8" />
+                </div>
+                <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg">
+                    <img src="img/maxerica_2.png" class="wp9" />
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="events section-padding" id="events">
-            <div class="container">
-                <div id="events-header" class="row">
-                    <div class="col-md-12">
-                        <h2 class="header">Events</h2>
+    <section id="eng-pics" class="section-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="text-center col-md-12">
+                    <h2 class="header">Engagement</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="fancybox" rel="group" href="img/eng_pics/eng_1.jpg">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/eng_1.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a class="fancybox" rel="group" href="img/eng_pics/eng_2.jpg">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/eng_2.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a class="fancybox" rel="group" href="img/eng_pics/eng_3.jpg">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/eng_3.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a class="fancybox" rel="group" href="img/eng_pics/eng_4.jpg">
+                        <div class="img-wrap">
+                            <div class="overlay">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <img src="img/eng_pics/eng_4.jpg" alt="" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row hidden-lg hidden-md hidden-xs">
+                <div class="col-xs-12 section-border section-padding"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="events section-padding" id="events">
+        <div class="container">
+            <div id="events-header" class="row">
+                <div class="col-md-12">
+                    <h2 class="header">Events</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
+                    <div class="wp5">
+                        <h3>Friday, April 11th</h3>
+
+                        <h4>
+                            Ski & Ride/Reggae Festival
+                        </h4>
+                        <div class="attrs">
+                            <p title="Time" class="attr">
+                                <i class="fa fa-clock-o"></i>Day
+                            </p>
+                            <p title="Location" class="attr">
+                                <i class="fa fa-compass"></i><a
+                                    href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
+                            </p>
+                        </div>
+                        <p>
+                            Hit the slopes! Friday is the start of Reggae Festival.
+                            Expect good vibes, live music, and food trucks.
+                        </p>
+
+                        <h4>
+                            Après Shred at Deb and Paul's
+                        </h4>
+
+                        <div class="attrs">
+                            <p title="Time" class="attr">
+                                <i class="fa fa-clock-o"></i>7 - 9 PM
+                            </p>
+                            <p title="Location" class="attr">
+                                <i class="fa fa-compass"></i><a
+                                    href="https://maps.app.goo.gl/gMAvb9exigHg6Rwa9">Directions</a> | 2135 Crocker
+                                Mountain Rd, Carrabassett Valley, ME 04947
+                            </p>
+                        </div>
+                        <p>
+                            Join us for drinks and chit-chat at Deb and Paul's condo.
+                            Bring yourselves: beverages, snacks, and good company await you.
+                        </p>
+
+                        <h4>
+                            Reggae Festival
+                        </h4>
+                        <div class="attrs">
+                            <p title="Time" class="attr">
+                                <i class="fa fa-clock-o"></i>Night
+                            </p>
+                            <p title="Location" class="attr">
+                                <i class="fa fa-compass"></i><a
+                                    href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
+                                - Base Lodge
+                            </p>
+                        </div>
+                        <p>
+                            Reggae Festival will be rocking all night and into the wee hours of the morning.
+                            Enjoy the music, food, and friends.
+                        </p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
-                        <div class="wp5">
-                            <h3>Friday, April 11th</h3>
+                <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
+                    <div class="wp4">
+                        <h3>Saturday, April 12th</h3>
 
-                            <h4>
-                                Ski & Ride/Reggae Festival
-                            </h4>
-                            <div class="attrs">
-                                <p title="Time" class="attr">
-                                    <i class="fa fa-clock-o"></i>Day
-                                </p>
-                                <p title="Location" class="attr">
-                                    <i class="fa fa-compass"></i><a href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
-                                </p>
-                            </div>
-                            <p>
-                                Hit the slopes! Friday is the start of Reggae Festival.
-                                Expect good vibes, live music, and food trucks.
+                        <h4>
+                            Mountain Top Ceremony
+                        </h4>
+                        <div class="attrs">
+                            <p title="Time" class="attr">
+                                <i class="fa fa-clock-o"></i>10:30 - 11 AM
                             </p>
-
-                            <h4>
-                                Après Shred at Deb and Paul's
-                            </h4>
-
-                            <div class="attrs">
-                                <p title="Time" class="attr">
-                                    <i class="fa fa-clock-o"></i>7 - 9 PM
-                                </p>
-                                <p title="Location" class="attr">
-                                    <i class="fa fa-compass"></i><a href="https://maps.app.goo.gl/gMAvb9exigHg6Rwa9">Directions</a> | 2135 Crocker Mountain Rd, Carrabassett Valley, ME 04947
-                                </p>
-                            </div>
-                            <p>
-                                Join us for drinks and chit-chat at Deb and Paul's condo.
-                                Bring yourselves, beverages and snacks will be provided.
-                            </p>
-
-                            <h4>
-                                Reggae Festival
-                            </h4>
-                            <div class="attrs">
-                                <p title="Time" class="attr">
-                                    <i class="fa fa-clock-o"></i>Night
-                                </p>
-                                <p title="Location" class="attr">
-                                    <i class="fa fa-compass"></i><a href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain - Base Lodge
-                                </p>
-                            </div>
-                            <p>
-                                Reggae Festival will be rocking all night and into the wee hours of the morning.
-                                Enjoy the music, food, and friends.
+                            <p title="Location" class="attr">
+                                <i class="fa fa-compass"></i><a
+                                    href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
+                                - Super Quad Chairlift
                             </p>
                         </div>
+                        <p>
+                            The ceremony will be held at the top of the
+                            mountain. <strong><em>We will meet 15 minutes before (10:15 AM)</em></strong>
+                            at the Super Quad chairlift and arrive at the top
+                            of the mountain around 10:30 AM. We will ride
+                            the lift to the top and walk to the ceremony
+                            site. The ceremony will be short and sweet with
+                            a beautiful view of the valley. It will be live
+                            streamed to those not on skis or board.
+                        </p>
+
+                        <h4>
+                            Base Lodge Hurrah!
+                        </h4>
+                        <div class="attrs">
+                            <p title="Time" class="attr">
+                                <i class="fa fa-clock-o"></i>11 - 11:15 AM
+                            </p>
+                            <p title="Location" class="attr">
+                                <i class="fa fa-compass"></i><a
+                                    href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
+                                - Base Lodge (Outside)
+                            </p>
+                        </div>
+                        <p>
+                            We will all ski/ride down the mountain and
+                            gather everyone to finish the celebration with a
+                            champagne toast.
+                        </p>
+
+                        <h4>
+                            Ski & Ride/Reggae Festival
+                        </h4>
+                        <div class="attrs">
+                            <p title="Time" class="attr">
+                                <i class="fa fa-clock-o"></i>11:15 AM - 4 PM
+                            </p>
+                            <p title="Location" class="attr">
+                                <i class="fa fa-compass"></i><a
+                                    href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
+                            </p>
+                        </div>
+                        <p>
+                            After the ceremony, we will ski and ride the
+                            mountain until the lifts close. The Reggae Festival
+                            will also be in full effect with good vibes,
+                            live music, and food trucks.
+                        </p>
+
+                        <h4>
+                            Celebratory Dinner
+                        </h4>
+                        <div class="attrs">
+                            <p title="Time" class="attr">
+                                <i class="fa fa-clock-o"></i>6 - 8 PM
+                            </p>
+                            <p title="Location" class="attr">
+                                <i class="fa fa-compass"></i><a
+                                    href="https://maps.app.goo.gl/1NPK8omDxSHCMZGv6">Directions</a> | 7027 First Tracks
+                                Ln, Carrabassett Valley, ME 04947
+                            </p>
+                        </div>
+                        <p>
+                            We will enjoy a catered dinner at Max and
+                            Erica's condo with close family and friends.
+                            Bring yourselves: dinner, drinks, dessert and
+                            good company await you.
+                        </p>
+
+                        <h4>
+                            Reggae Festival
+                        </h4>
+                        <div class="attrs">
+                            <p title="Time" class="attr">
+                                <i class="fa fa-clock-o"></i>8 PM - 12 AM
+                            </p>
+                            <p title="Location" class="attr">
+                                <i class="fa fa-compass"></i><a
+                                    href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
+                            </p>
+                        </div>
+                        <p>
+                            Once everyone is well fed, we have the option
+                            to continue enjoying the late night Reggae
+                            Festival music, food, and friends.
+                        </p>
                     </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
-                        <div class="wp4">
-                            <h3>Saturday, April 12th</h3>
-
-                            <h4>
-                                Mountain Top Ceremony
-                            </h4>
-                            <div class="attrs">
-                                <p title="Time" class="attr">
-                                    <i class="fa fa-clock-o"></i>10:30 - 11 AM
-                                </p>
-                                <p title="Location" class="attr">
-                                    <i class="fa fa-compass"></i><a href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain - Super Quad Chairlift
-                                </p>
-                            </div>
-                            <p>
-                                The ceremony will be held at the top of the
-                                mountain. <strong><em>We will meet 15 minutes before (10:15 AM)</em></strong>
-                                at the Super Quad chairlift and arrive at the top
-                                of the mountain around 10:30 AM. We will ride
-                                the lift to the top and walk to the ceremony
-                                site. The ceremony will be short and sweet with
-                                a beautiful view of the valley. It will be live
-                                streamed to those not on skis or board.
-                            </p>
-
-                            <h4>
-                                Base Lodge Hurrah!
-                            </h4>
-                            <div class="attrs">
-                                <p title="Time" class="attr">
-                                    <i class="fa fa-clock-o"></i>11 - 11:15 AM
-                                </p>
-                                <p title="Location" class="attr">
-                                    <i class="fa fa-compass"></i><a href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain - Base Lodge (Outside)
-                                </p>
-                            </div>
-                            <p>
-                                We will all ski/ride down the mountain and
-                                gather everyone to finish the celebration with a
-                                champagne toast.
-                            </p>
-
-                            <h4>
-                                Ski & Ride/Reggae Festival
-                            </h4>
-                            <div class="attrs">
-                                <p title="Time" class="attr">
-                                    <i class="fa fa-clock-o"></i>11:15 AM - 4 PM
-                                </p>
-                                <p title="Location" class="attr">
-                                    <i class="fa fa-compass"></i><a href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
-                                </p>
-                            </div>
-                            <p>
-                                After the ceremony, we will ski and ride the
-                                mountain until the lifts close. The Reggae Festival
-                                will also be in full effect with good vibes,
-                                live music, and food trucks.
-                            </p>
-
-                            <h4>
-                                Celebratory Dinner
-                            </h4>
-                            <div class="attrs">
-                                <p title="Time" class="attr">
-                                    <i class="fa fa-clock-o"></i>6 - 8 PM
-                                </p>
-                                <p title="Location" class="attr">
-                                    <i class="fa fa-compass"></i><a href="https://maps.app.goo.gl/1NPK8omDxSHCMZGv6">Directions</a> | 7027 First Tracks Ln, Carrabassett Valley, ME 04947
-                                </p>
-                            </div>
-                            <p>
-                                We will enjoy a catered dinner at Max and
-                                Erica's condo with close family and friends.
-                                Bring yourselves, dinner and drinks will be
-                                provided.
-                            </p>
-
-                            <h4>
-                                Reggae Festival
-                            </h4>
-                            <div class="attrs">
-                                <p title="Time" class="attr">
-                                    <i class="fa fa-clock-o"></i>8 PM - 12 AM
-                                </p>
-                                <p title="Location" class="attr">
-                                    <i class="fa fa-compass"></i><a href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
-                                </p>
-                            </div>
-                            <p>
-                                Once everyone is well fed, we have the option
-                                to continue enjoying the late night Reggae
-                                Festival music, food, and friends.
-                            </p>
-                        </div>
-                        <!-- <div class="wp6">
+                    <!-- <div class="wp6">
                             <h3>Sunday, April 13th</h3>
 
                             <h4>
@@ -480,58 +453,45 @@
                                 those who want to start the day off right.
                             </p>
                         </div> -->
-                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="where" class="section-padding">
-            <div class="text-center">
-                <h2>Where is the celebration?</h2>
+    <section id="where" class="section-padding">
+        <div class="text-center">
+            <h2>Where is the celebration?</h2>
+        </div>
+    </section>
+
+    <section id="video-bg">
+        <video crossorigin autoplay playsinline muted loop tabindex="-1" id="sugarloaf-video">
+            <source src="/video/sugarloaf-reel.mp4" type="video/mp4" />
+        </video>
+        <div id="video-overlay">
+            <div id="video-content">
+                <article>
+                    <h5>Sugarloaf</h5>
+                    <p>Carrabassett Valley, ME</p>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="video-bg">
-            <video
-                crossorigin
-                autoplay
-                playsinline
-                muted
-                loop
-                tabindex="-1"
-                id="sugarloaf-video"
-            >
-                <source src="/video/sugarloaf-reel.mp4" type="video/mp4" />
-            </video>
-            <div id="video-overlay">
-                <div id="video-content">
-                    <article>
-                        <h5>Sugarloaf</h5>
-                        <p>Carrabassett Valley, ME</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+    <section id="map">
+        <iframe id="map-canvas"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d884.4380975850557!2d-70.31533336401586!3d45.032129695079405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb11ca36dda53d7%3A0xc4e7f50a8aaea6a9!2sSugarloaf%20Mountain!5e1!3m2!1sen!2sus!4v1735752671378!5m2!1sen!2sus"
+            width="600" height="450" allowfullscreen="false" loading="async"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
 
-        <section id="map">
-            <iframe
-                id="map-canvas"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d884.4380975850557!2d-70.31533336401586!3d45.032129695079405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb11ca36dda53d7%3A0xc4e7f50a8aaea6a9!2sSugarloaf%20Mountain!5e1!3m2!1sen!2sus!4v1735752671378!5m2!1sen!2sus"
-                width="600"
-                height="450"
-                allowfullscreen="false"
-                loading="async"
-                referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-        </section>
+    <section id="directions" class="section-padding">
+        <a href="https://maps.app.goo.gl/iZpmpHt73U7fmcWA9" target="_blank" class="btn-fill">
+            <h3><i class="fa fa-compass"></i> Get Directions</h3>
+        </a>
+    </section>
 
-        <section id="directions" class="section-padding">
-            <a href="https://maps.app.goo.gl/iZpmpHt73U7fmcWA9" target="_blank" class="btn-fill">
-                <h3><i class="fa fa-compass"></i> Get Directions</h3>
-            </a>
-        </section>
-
-        <!-- <section class="text-center rsvp" id="rsvp">
+    <!-- <section class="text-center rsvp" id="rsvp">
             <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -555,10 +515,10 @@
                         </div>
                     </div>
                     <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
-            <!-- /.modal
+    </div>
+    <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal
 
             <div class="container">
                 <div class="row">
@@ -641,48 +601,37 @@
             </div>
         </section> -->
 
-        <footer class="section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="text-center col-sm-12 content">
-                        <span class="to-top-wrapper"
-                            ><a href="#top" class="to-top"
-                                ><i class="fa fa-angle-up"></i></a
-                        ></span>
-                        <p>
-                            Crafted by Max with lots of
-                            <span class="fa fa-heart pulse2"></span> for Erica
-                        </p>
-                    </div>
+    <footer class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-sm-12 content">
+                    <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
+                    <p>
+                        Crafted by Max with lots of
+                        <span class="fa fa-heart pulse2"></span> for Erica
+                    </p>
                 </div>
             </div>
-        </footer>
-        <script
-            src="js/vendor/jquery-1.11.2.min.js"
-            onerror="loadJsFromCDN('jquery.js')"
-        ></script>
-        <script
-            src="node_modules/waypoints/lib/jquery.waypoints.min.js"
-            onerror="loadJsFromCDN('waypoints.js')"
-        ></script>
-        <script src="js/jquery.fancybox.pack.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/jquery.flexslider-min.js"></script>
-        <script src="js/vendor/ouical.js"></script>
-        <script src="js/scripts.min.js"></script>
-        <!-- Google tag (gtag.js) -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-NEEDTQLWNT"
-        ></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
+        </div>
+    </footer>
+    <script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
+    <script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/vendor/ouical.js"></script>
+    <script src="js/scripts.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NEEDTQLWNT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-            gtag("config", "G-NEEDTQLWNT");
-        </script>
-    </body>
+        gtag("config", "G-NEEDTQLWNT");
+    </script>
+</body>
+
 </html>
