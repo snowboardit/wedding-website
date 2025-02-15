@@ -293,6 +293,9 @@ Hero
   background-size: cover;
   position: relative;
 
+  #hero-logo {
+    opacity: 90%;
+  }
   .rsvp-btn {
     &:hover {
       color: $black-color;
