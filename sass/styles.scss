@@ -285,7 +285,7 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 95dvh;
+  height: 97vh; // both born in '97 :)
   background: url("../img/hero-min.jpg") center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -314,12 +314,17 @@ Hero
     font-weight: 300;
     margin-bottom: 80px;
   }
-  .hero-content {
-    padding-top: 40%;
-  }
-  .hero-content img {
-    width: 55%;
-    margin-bottom: 12%;
+  .container {
+    height: inherit;
+    display: grid;
+    place-items: center;
+
+    .hero-content {
+      padding-top: 24%; // max's favorite number :)
+    }
+    .hero-content img {
+      width: 75%;
+    }
   }
 }
 .navigation {
