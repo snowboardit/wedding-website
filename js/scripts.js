@@ -117,7 +117,7 @@ $(document).ready(function () {
       if (scroll >= 20) {
         $("section.navigation").addClass("fixed");
         $("header").css({
-          padding: "35px 0",
+          padding: "27px 0",
         });
         $("header .member-actions").css({
           top: "26px",
