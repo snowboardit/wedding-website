@@ -6,11 +6,17 @@ var uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
 
 // compile scss to css
+const sassFiles = ["./sass/styles.scss", "./sass/normalize.scss"];
 gulp.task("sass", function () {
   return gulp
-    .src("./sass/styles.scss")
+    .src(sassFiles)
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-    .pipe(rename({ basename: "styles.min" }))
+    .pipe(
+      rename({
+        suffix: ".min",
+        extname: ".css",
+      })
+    )
     .pipe(gulp.dest("./css"));
 });
 
