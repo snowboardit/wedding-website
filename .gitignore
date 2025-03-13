@@ -36,3 +36,5 @@ typings/
 .env
 .sass-cache/
 *.css.map
+css/styles.min.css
+css/normalize.min.css
