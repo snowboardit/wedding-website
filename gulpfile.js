@@ -22,7 +22,7 @@ gulp.task("sass", function () {
 
 // watch changes in scss files and run sass task
 gulp.task("sass:watch", function () {
-  return gulp.watch("./sass/**/*.scss", gulp.series("sass"));
+  return gulp.watch(sassFiles, gulp.series("sass"));
 });
 
 // minify js
