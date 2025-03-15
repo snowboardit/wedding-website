@@ -26,11 +26,12 @@ gulp.task("sass:watch", function () {
 });
 
 // minify js
+const jsFiles = ["./js/scripts.js", "./js/service-worker.js"];
 gulp.task("minify-js", function () {
   return gulp
-    .src("./js/scripts.js")
+    .src(jsFiles)
     .pipe(uglify())
-    .pipe(rename({ basename: "scripts.min" }))
+    .pipe(rename({ suffix: ".min", extname: ".js" }))
     .pipe(gulp.dest("./js"));
 });
 

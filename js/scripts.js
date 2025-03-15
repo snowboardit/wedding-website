@@ -248,76 +248,37 @@ $(document).ready(function () {
 
 /********************** Extras **********************/
 
-/********************** PWA **********************/
-let deferredPrompt;
-
-function getPWAInstallContainer() {
-  const el = document.getElementById("install-container");
-  if (!el) {
-    console.error('"install-container" element not found');
-    return;
-  }
-  return el;
+/********************** Service Worker **********************/
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/js/service-worker.min.js")
+      .then((registration) => {
+        console.log(
+          "Service Worker registered with scope:",
+          registration.scope
+        );
+      })
+      .catch((error) => {
+        console.error("Service Worker registration failed:", error);
+      });
+  });
 }
-
-function getPWAInstallBtn() {
-  const el = document.getElementById("install-button");
-  if (!el) {
-    console.error('"install-button" element not found');
-    return;
-  }
-  return el;
-}
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  console.log('"beforeinstallprompt" event fired');
-  // prevent the automatic mini-infobar from appearing
-  e.preventDefault();
-
-  // save the event to trigger it later
-  deferredPrompt = e;
-
-  // display the custom install UI
-  const btn = getPWAInstallBtn();
-  btn.style.display = "block";
-  console.log("Install button displayed");
-});
-
-const installBtn = getPWAInstallBtn();
-installBtn.addEventListener("click", async () => {
-  // hide the install button
-  const container = getPWAInstallContainer();
-  container.style.display = "none";
-
-  // show the install prompt
-  deferredPrompt.prompt();
-
-  // wait for the user to respond to the prompt
-  const { outcome } = await deferredPrompt.userChoice;
-  if (outcome === "accepted") {
-    console.info("User accepted the install prompt");
-  } else {
-    console.info("User dismissed the install prompt");
-  }
-
-  // clear the saved prompt since it can't be used again
-  deferredPrompt = null;
-});
 
 // Google map
-function initMap() {
-  var location = { lat: 45.03139860844599, lng: -70.31312584062626 };
-  var map = new google.maps.Map(document.getElementById("map-canvas"), {
-    zoom: 15,
-    center: location,
-    scrollwheel: false,
-  });
+// function initMap() {
+//   var location = { lat: 45.03139860844599, lng: -70.31312584062626 };
+//   var map = new google.maps.Map(document.getElementById("map-canvas"), {
+//     zoom: 15,
+//     center: location,
+//     scrollwheel: false,
+//   });
 
-  var marker = new google.maps.Marker({
-    position: location,
-    map: map,
-  });
-}
+//   var marker = new google.maps.Marker({
+//     position: location,
+//     map: map,
+//   });
+// }
 
 // alert_markup
 function alert_markup(alert_type, msg) {
