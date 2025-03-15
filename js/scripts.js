@@ -165,37 +165,37 @@ $(document).ready(function () {
     });
   });
 
-  /********************** Add to Calendar **********************/
-  var myCalendar = createCalendar({
-    options: {
-      class: "",
-      // You can pass an ID. If you don't, one will be generated for you
-      id: "",
-    },
-    data: {
-      // Event title
-      title: "Ram and Antara's Wedding",
+  // /********************** Add to Calendar **********************/
+  // var myCalendar = createCalendar({
+  //   options: {
+  //     class: "",
+  //     // You can pass an ID. If you don't, one will be generated for you
+  //     id: "",
+  //   },
+  //   data: {
+  //     // Event title
+  //     title: "Ram and Antara's Wedding",
 
-      // Event start date
-      start: new Date("Nov 27, 2017 10:00"),
+  //     // Event start date
+  //     start: new Date("Nov 27, 2017 10:00"),
 
-      // Event duration (IN MINUTES)
-      // duration: 120,
+  //     // Event duration (IN MINUTES)
+  //     // duration: 120,
 
-      // You can also choose to set an end time
-      // If an end time is set, this will take precedence over duration
-      end: new Date("Nov 29, 2017 00:00"),
+  //     // You can also choose to set an end time
+  //     // If an end time is set, this will take precedence over duration
+  //     end: new Date("Nov 29, 2017 00:00"),
 
-      // Event Address
-      address: "ITC Fortune Park Hotel, Kolkata",
+  //     // Event Address
+  //     address: "ITC Fortune Park Hotel, Kolkata",
 
-      // Event Description
-      description:
-        "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210.",
-    },
-  });
+  //     // Event Description
+  //     description:
+  //       "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210.",
+  //   },
+  // });
 
-  $("#add-to-cal").html(myCalendar);
+  // $("#add-to-cal").html(myCalendar);
 
   /********************** RSVP **********************/
   $("#rsvp-form").on("submit", function (e) {
@@ -246,37 +246,63 @@ $(document).ready(function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  /********************** Embed sugarloaf video *********************/
-  (async function () {
-    // console.log("Fetching video file...");
-    // const videoFile = await fetch(
-    //     "https://www.sugarloaf.com/4ebe78ac-034f-4241-a36f-930743f23c16"
-    //   ).then((res) => res.blob()),
-    //   videoEl = document.getElementById("#sugarloaf-video");
-    // // thanks: https://stackoverflow.com/questions/14317179/display-a-video-from-a-blob-javascript
-    // if (!(videoFile instanceof Blob))
-    //   throw new Error("`videoFile` must be a Blob or File object."); // The `File` prototype extends the `Blob` prototype, so `instanceof Blob` works for both.
-    // if (!(videoEl instanceof HTMLVideoElement))
-    //   throw new Error("`videoEl` must be a <video> element.");
-    // const newObjectUrl = URL.createObjectURL(videoFile),
-    //   sourceEl = document.createElement("source");
-    // // URLs created by `URL.createObjectURL` always use the `blob:` URI scheme: https://w3c.github.io/FileAPI/#dfn-createObjectURL
-    // const oldObjectUrl = videoEl.currentSrc;
-    // if (oldObjectUrl && oldObjectUrl.startsWith("blob:")) {
-    //   // It is very important to revoke the previous ObjectURL to prevent memory leaks. Un-set the `src` first.
-    //   // See https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
-    //   videoEl.src = ""; // <-- Un-set the src property *before* revoking the object URL.
-    //   URL.revokeObjectURL(oldObjectUrl);
-    // }
-    // // Then set the new URL:
-    // videoEl.src = newObjectUrl;
-    // // And load it:
-    // videoEl.load(); // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/load
-  })();
+/********************** Extras **********************/
+
+/********************** PWA **********************/
+let deferredPrompt;
+
+function getPWAInstallContainer() {
+  const el = document.getElementById("install-container");
+  if (!el) {
+    console.error('"install-container" element not found');
+    return;
+  }
+  return el;
+}
+
+function getPWAInstallBtn() {
+  const el = document.getElementById("install-button");
+  if (!el) {
+    console.error('"install-button" element not found');
+    return;
+  }
+  return el;
+}
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  console.log('"beforeinstallprompt" event fired');
+  // prevent the automatic mini-infobar from appearing
+  e.preventDefault();
+
+  // save the event to trigger it later
+  deferredPrompt = e;
+
+  // display the custom install UI
+  const btn = getPWAInstallBtn();
+  btn.style.display = "block";
+  console.log("Install button displayed");
 });
 
-/********************** Extras **********************/
+const installBtn = getPWAInstallBtn();
+installBtn.addEventListener("click", async () => {
+  // hide the install button
+  const container = getPWAInstallContainer();
+  container.style.display = "none";
+
+  // show the install prompt
+  deferredPrompt.prompt();
+
+  // wait for the user to respond to the prompt
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === "accepted") {
+    console.info("User accepted the install prompt");
+  } else {
+    console.info("User dismissed the install prompt");
+  }
+
+  // clear the saved prompt since it can't be used again
+  deferredPrompt = null;
+});
 
 // Google map
 function initMap() {
