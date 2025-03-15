@@ -252,7 +252,7 @@ $(document).ready(function () {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("/js/service-worker.min.js", { scope: "/" })
+      .register("/service-worker.min.js")
       .then((registration) => {
         console.log(
           "Service Worker registered with scope:",

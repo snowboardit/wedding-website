@@ -26,7 +26,7 @@ gulp.task("sass:watch", function () {
 });
 
 // minify js
-const jsFiles = ["./js/scripts.js", "./js/service-worker.js"];
+const jsFiles = ["./js/scripts.js"];
 gulp.task("minify-js", function () {
   return gulp
     .src(jsFiles)
@@ -35,5 +35,14 @@ gulp.task("minify-js", function () {
     .pipe(gulp.dest("./js"));
 });
 
+// minify service worker - must be located at the top level, hence a separate task
+gulp.task("service-worker-js", function () {
+  return gulp
+    .src("./js/service-worker.js")
+    .pipe(uglify())
+    .pipe(rename({ suffix: ".min", extname: ".js" }))
+    .pipe(gulp.dest("./"));
+});
+
 // default task
-gulp.task("default", gulp.series("sass", "minify-js"));
+gulp.task("default", gulp.series("sass", "minify-js", "service-worker-js"));
