@@ -44,5 +44,10 @@ gulp.task("service-worker-js", function () {
     .pipe(gulp.dest("./"));
 });
 
+// watch all changes for known js files
+gulp.task("js:watch", function () {
+  return gulp.watch(jsFiles, gulp.series("minify-js", "service-worker-js"));
+});
+
 // default task
 gulp.task("default", gulp.series("sass", "minify-js", "service-worker-js"));
