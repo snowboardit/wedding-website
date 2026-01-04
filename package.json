@@ -15,6 +15,7 @@
   "homepage": "https://github.com/snowboardit/wedding-website",
   "devDependencies": {
     "fast-glob": "^3.3.3",
+    "sass": "^1.97.1",
     "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.0.0",
