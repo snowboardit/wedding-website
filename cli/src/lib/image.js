@@ -32,7 +32,8 @@ export async function processImage({ srcPath, outPath, longEdge, quality }) {
 
 export async function stripMetadata(filePath) {
   // Remove ALL metadata, including GPS. Overwrite in place.
-  await exiftool.write(filePath, {}, ["-all="], {
-    writeArgs: ["-overwrite_original"],
-  });
+
+export async function fileMeta(filePath) {
+  const tags = await exiftool.read(filePath);
+  return tags;
 }

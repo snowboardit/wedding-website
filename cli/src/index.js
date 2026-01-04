@@ -1,5 +1,7 @@
+import path from "node:path";
 import { Command } from "commander";
 import { build } from "./commands/build.js";
+import { fileMeta } from "./lib/image.js";
 
 const program = new Command();
 
@@ -37,6 +39,21 @@ program
       process.exit(0);
     } catch (err) {
       console.error("something went wrong buidling", err);
+      process.exit(1);
+    }
+  });
+
+program
+  .command("meta")
+  .description("Get metadata from image")
+  .option("-i, --input <file>", "Input path of image")
+  .action(async (opts) => {
+    try {
+      const input = path.resolve(opts.input);
+      console.log(await fileMeta(input));
+      process.exit(0);
+    } catch (err) {
+      console.error("something went wrong getting metadata", err);
       process.exit(1);
     }
   });
