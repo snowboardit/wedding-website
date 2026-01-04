@@ -3,17 +3,15 @@ import { exiftool } from "exiftool-vendored";
 
 export async function processImage({ srcPath, outPath, longEdge, quality }) {
   // rotate() respects EXIF orientation
-  const pipeline = sharp(srcPath).rotate();
-
-  const meta = await pipeline.metadata();
-
-  // Resize so the long edge = longEdge (fit inside)
-  const resized = pipeline.resize({
-    width: meta.width >= meta.height ? longEdge : undefined,
-    height: meta.height > meta.width ? longEdge : undefined,
-    fit: "inside",
-    withoutEnlargement: true,
-  });
+  const pipeline = sharp(srcPath).rotate(),
+    meta = await pipeline.metadata(),
+    // Resize so the long edge = longEdge (fit inside)
+    resized = pipeline.resize({
+      width: meta.width >= meta.height ? longEdge : undefined,
+      height: meta.height > meta.width ? longEdge : undefined,
+      fit: "inside",
+      withoutEnlargement: true,
+    });
 
   // JPEG output: progressive for better UX
   await resized
@@ -32,6 +30,14 @@ export async function processImage({ srcPath, outPath, longEdge, quality }) {
 
 export async function stripMetadata(filePath) {
   // Remove ALL metadata, including GPS. Overwrite in place.
+  await exiftool.write(
+    filePath,
+    {},
+    {
+      writeArgs: ["-all=", "-overwrite_original"],
+    },
+  );
+}
 
 export async function fileMeta(filePath) {
   const tags = await exiftool.read(filePath);
