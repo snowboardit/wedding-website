@@ -147,17 +147,17 @@ Wedding Pics Gallery
 }
 
 /* Responsive column counts */
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   #wed-pics-grid.wed-masonry {
     column-count: 3;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   #wed-pics-grid.wed-masonry {
     column-count: 2;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 620px) {
   #wed-pics-grid.wed-masonry {
     column-count: 1;
   }
@@ -362,16 +362,22 @@ Hero
 }
 
 .hero {
-  height: 100dvh;
-  background: url("../img/hero-min.jpg") center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  min-height: 100dvh;
+  background-image: url("../img/hero-min.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
 
   &.hitched {
-    background: url("../img/married/hero-hitched-min.jpg") center center;
+    background-image: url("../img/married/hero-hitched-sm-min.jpg");
+    background-size: cover;
+    background-position: center;
+
+    @media (min-width: 900px) {
+      background-image: url("../img/married/hero-hitched-min.jpg");
+      background-size: cover;
+      background-position: center top;
+    }
   }
 
   #hero-logo {
@@ -402,7 +408,7 @@ Hero
     place-items: center;
 
     .hero-content {
-      padding-top: 50%;
+      padding-top: 65dvh;
       display: grid;
       place-items: center;
 
@@ -459,6 +465,7 @@ header {
 
       a {
         color: $txt-light;
+        text-shadow: #000 1px 1px 4px;
         padding-right: 25px;
 
         &:hover {
@@ -476,6 +483,7 @@ header {
 
       a {
         color: $txt-light;
+        text-shadow: #000 1px 1px 4px;
 
         &:hover {
           color: $white-color;
