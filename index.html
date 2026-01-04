@@ -68,40 +68,49 @@
 </head>
 
 <body id="top">
-    <section id="hero-engaged" class="hero inactive">
-        <section class="navigation">
-            <header>
-                <div class="header-content">
-                    <div class="logo">
-                        <a href="#top"><img src="img/logo.png" alt="Logo" /></a>
-                    </div>
-                    <div class="header-nav">
-                        <nav>
-                            <ul class="primary-nav">
-                                <li><a href="#invitation">Info</a></li>
-                                <li><a href="#intro">Our Story</a></li>
-                                <li><a href="#eng-pics">Engagement</a></li>
-                                <li><a href="#events">Events</a></li>
-                                <li>
-                                    <a href="#where">Location</a>
-                                </li>
-                                <li>
-                                    <a href="#registry">Registry</a>
-                                </li>
-                            </ul>
-                            <ul class="member-actions">
-                                <li>
-                                    <a id="hitched" href="#" class="btn btn-white">🎉 Married</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="navicon">
-                        <a class="nav-toggle" href="#"><span></span></a>
-                    </div>
+    <section class="navigation">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#top"><img src="img/logo.png" alt="Logo" /></a>
                 </div>
-            </header>
-        </section>
+                <div class="header-nav">
+                    <nav>
+                        <ul class="primary-nav">
+                            <!-- engaged -->
+                            <li><a id="link-invitation" href="#invitation" class="isInactive">Info</a></li>
+                            <li><a id="link-intro" href="#intro" class="isInactive">Our Story</a></li>
+                            <li><a id="link-outro" href="#outro">Thank You</a></li>
+                            <li><a id="link-eng-pics" href="#eng-pics" class="isInactive">Engagement</a></li>
+                            <li><a id="link-events" href="#events" class="isInactive">Events</a></li>
+                            <li>
+                                <a id="link-where" href="#where">Location</a>
+                            </li>
+                            <li>
+                                <a id="link-wed-pics" href="#wed-pics">Photos</a>
+                            </li>
+                            <li>
+                                <a id="link-registry" href="#registry">Registry</a>
+                            </li>
+                        </ul>
+                        <ul class="member-actions">
+                            <li>
+                                <a id="engagement" href="#" class="btn btn-white">💍 Engagement</a>
+                            </li>
+                            <li>
+                                <a id="hitched" href="#" class="btn btn-white isInactive">🎉 Married</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="navicon">
+                    <a class="nav-toggle" href="#"><span></span></a>
+                </div>
+            </div>
+        </header>
+    </section>
+
+    <section id="hero-engaged" class="hero isInactive">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
@@ -119,39 +128,6 @@
     </section>
 
     <section id="hero-hitched" class="hero hitched">
-        <section class="navigation">
-            <header>
-                <div class="header-content">
-                    <div class="logo">
-                        <a href="#top"><img src="img/logo.png" alt="Logo" /></a>
-                    </div>
-                    <div class="header-nav">
-                        <nav>
-                            <ul class="primary-nav">
-                                <li><a href="#outro">Thank You</a></li>
-                                <li>
-                                    <a href="#where">Location</a>
-                                </li>
-                                <li>
-                                    <a href="#wed-pics">Photos</a>
-                                </li>
-                                <li>
-                                    <a href="#registry">Registry</a>
-                                </li>
-                            </ul>
-                            <ul class="member-actions">
-                                <li>
-                                    <a id="engagement" href="#" class="btn btn-white">💍 Engagement</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="navicon">
-                        <a class="nav-toggle" href="#"><span></span></a>
-                    </div>
-                </div>
-            </header>
-        </section>
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
@@ -166,7 +142,7 @@
         </div>
     </section>
 
-    <section id="invitation" class="section-padding inactive">
+    <section id="invitation" class="section-padding isInactive">
         <div class="container">
             <div class="row">
                 <div class="text-center col-md-2"></div>
@@ -200,7 +176,7 @@
         </div>
     </section>
 
-    <section id="intro" class="section-padding inactive">
+    <section id="intro" class="section-padding isInactive">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 hidden-sm hidden-xs">
@@ -251,9 +227,11 @@
                         <h1>&#127881;<!-- party popper --></h1>
                         <h2 class="header">We did it!</h2>
                     </div>
-                    <p>
-                        Thank you to everyone who has supported us! We love and appreciate all of you.
-                    </p>
+
+                    <p>Thank you to everyone who has supported us -- near or far, then and now.</p>
+                    <p>We love and appreciate you all.</p>
+                    <br>
+                    <br>
                 </div>
                 <div class="col-md-3 hidden-sm hidden-xs">
                     <img alt="max and erica right" src="img/married/max-shredding-wide-min.png" class="wp2" />
@@ -271,7 +249,7 @@
         </div>
     </section>
 
-    <section id="eng-pics" class="section-padding inactive">
+    <section id="eng-pics" class="section-padding isInactive">
         <div class="container-fluid">
             <div class="row">
                 <div class="text-center col-md-12">
@@ -331,7 +309,7 @@
         </div>
     </section>
 
-    <section id="events" class="events section-padding inactive">
+    <section id="events" class="events section-padding isInactive">
         <div class="container">
             <div id="events-header" class="row">
                 <div class="col-md-12">
@@ -615,7 +593,7 @@
         </div>
     </section>
 
-    <section id="map" class="inactive">
+    <section id="map" class="isInactive">
         <iframe id="map-canvas"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d884.4380975850557!2d-70.31533336401586!3d45.032129695079405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb11ca36dda53d7%3A0xc4e7f50a8aaea6a9!2sSugarloaf%20Mountain!5e1!3m2!1sen!2sus!4v1735752671378!5m2!1sen!2sus"
             width="600" height="450" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -648,7 +626,7 @@
                         <span class="fa fa-heart fa-beat"></span> for Erica
                         <br>
                         <em>Source code available on <a href="https://github.com/snowboardit/wedding-website"
-                                target="_blank">GitHub <i class="fa-brands fa-github"></i></a></em>
+                                target="_blank" rel="noopener">GitHub <i class="fa-brands fa-github"></i></a></em>
                     </p>
 
                 </div>

@@ -67,12 +67,12 @@ ul li {
 section .header {
   padding-bottom: 30px;
 }
-.active {
+.isActive {
   position: relative;
   opacity: 1;
   pointer-events: initial;
 }
-.inactive {
+.isInactive {
   position: absolute !important;
   opacity: 0;
   pointer-events: none;

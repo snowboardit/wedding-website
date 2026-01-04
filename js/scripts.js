@@ -1,6 +1,15 @@
 $(document).ready(function () {
   /** setup engaged/married content toggle **/
-  const sectionsEngagement = [
+  const idsEngagement = [
+      // nav links
+      "hitched",
+      "link-invitation",
+      "link-intro",
+      "link-eng-pics",
+      "link-events",
+      "link-where",
+      "link-registry",
+      // sections
       "hero-engaged",
       "invitation",
       "intro",
@@ -11,7 +20,14 @@ $(document).ready(function () {
       "map",
       "registry",
     ],
-    sectionsHitched = [
+    idsHitched = [
+      // nav links
+      "engagement",
+      "link-outro",
+      "link-where",
+      "link-wed-pics",
+      "link-registry",
+      // sections
       "hero-hitched",
       "outro",
       "wed-pics",
@@ -19,39 +35,37 @@ $(document).ready(function () {
       "video-bg",
       "registry",
     ],
-    transitionSections = function (fromSections, toSections) {
-      const sectionsExcluded = fromSections.filter(
-        (s) => !toSections.includes(s),
-      );
+    transition = function (from, to) {
+      const sectionsExcluded = from.filter((s) => !to.includes(s));
 
       // hide existing sections that aren't in the sections we are showing
       for (const excluded of sectionsExcluded) {
         try {
-          console.info(`hiding #${excluded}`);
-          $(`#${excluded}`).removeClass("active");
-          $(`#${excluded}`).addClass("inactive");
+          // console.info(`hiding #${excluded}`);
+          $(`#${excluded}`).removeClass("isActive");
+          $(`#${excluded}`).addClass("isInactive");
         } catch (err) {
           console.error(`unable to hide section: ${excluded}`, err);
         }
       }
       // show sections
-      for (const to of toSections) {
+      for (const t of to) {
         try {
-          console.info(`showing #${to}`);
-          $(`#${to}`).removeClass("inactive");
-          $(`#${to}`).addClass("active");
+          // console.info(`showing #${to}`);
+          $(`#${t}`).removeClass("isInactive");
+          $(`#${t}`).addClass("isActive");
         } catch (err) {
-          console.error(`unable to show section: ${sTo}`, err);
+          console.error(`unable to show section: ${t}`, err);
         }
       }
     };
 
   $("#hitched").click(function () {
-    transitionSections(sectionsEngagement, sectionsHitched);
+    transition(idsEngagement, idsHitched);
   });
 
   $("#engagement").click(function () {
-    transitionSections(sectionsHitched, sectionsEngagement);
+    transition(idsHitched, idsEngagement);
   });
 
   /******* Wedding Photos Auto Loader ********/
@@ -121,7 +135,7 @@ $(document).ready(function () {
         let $batch = $();
         for (let i = start; i < end; i++) {
           const item = GALLERY_CONFIG.items[i],
-            alt = item.alt || "wedding photo";
+            alt = "";
 
           console.log(`item ${i}`, item);
 
