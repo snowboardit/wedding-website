@@ -15,7 +15,7 @@ program
   .description("Build gallery derivatives and manifest.")
   .option("-i, --input <dir>", "Input directory of originals", "./originals")
   .option("-o, --output <dir>", "Output directory", "./out")
-  .option("--thumb-size <px>", "Thumbnail long-edge in pixels", "480")
+  .option("--thumb-size <px>", "Thumbnail long-edge in pixels", "720")
   .option("--large-size <px>", "Large long-edge in pixels", "2400")
   .option("--thumb-quality <n>", "Thumbnail JPEG quality", "75")
   .option("--large-quality <n>", "Large JPEG quality", "82")
@@ -25,7 +25,7 @@ program
     "Base URL prefix for manifest items (e.g. https://cdn.example.com/wedding)",
     "",
   )
-  .option("--keep-metadata", "Do not remove EXIF metadata from outputs")
+  .option("--keep-metadata", "keep EXIF metadata in outputs")
   .option(
     "--pattern <glob>",
     "Glob pattern for originals",
