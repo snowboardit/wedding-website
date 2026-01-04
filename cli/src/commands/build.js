@@ -7,6 +7,19 @@ import { fileStemHash } from "../lib/hash.js";
 import { buildManifestItem, finalizeManifest } from "../lib/manifest.js";
 import { processImage, stripMetadata } from "../lib/image.js";
 
+const buildOrderKey = (rel, processedIndex) => {
+  // rel is relative path from fg; use basename for filename-based ordering
+  const base = path.basename(rel),
+    // Match: Lareau_Wedding-458 (optionally with extension; glob gives rel with extension)
+    m = base.match(/^Lareau_Wedding-(\d+)(?:\.[^.]+)?$/i);
+
+  // Items that match come first (group 0), ordered by numeric suffix.
+  // Non-matching come after (group 1), ordered by "processedIndex" (stable discovery order).
+  return m
+    ? { group: 0, n: Number(m[1]), order: 0 }
+    : { group: 1, n: Number.POSITIVE_INFINITY, order: processedIndex };
+};
+
 export async function build(opts) {
   const inputDir = path.resolve(opts.input),
     outputDir = path.resolve(opts.output),
@@ -45,17 +58,18 @@ export async function build(opts) {
   await cleanDir(thumbDir);
   await cleanDir(largeDir);
 
-  let id = 1;
+  let count = 1;
 
   await Promise.all(
-    files.map((rel) =>
+    files.map((rel, processedIndex) =>
       limit(async () => {
         const srcPath = path.join(inputDir, rel),
           ext = ".jpg",
           // deterministic-ish name derived from relative path (stable across runs if files don't move)
           name = `${fileStemHash(rel)}${ext}`,
           thumbOut = path.join(thumbDir, name),
-          largeOut = path.join(largeDir, name);
+          largeOut = path.join(largeDir, name),
+          orderKey = buildOrderKey(rel, processedIndex);
 
         const thumbInfo = await processImage({
           srcPath,
@@ -77,7 +91,6 @@ export async function build(opts) {
         }
 
         const item = buildManifestItem({
-          index: id++,
           identifier: uuidv4(),
           name,
           // Use baseUrl if provided; otherwise paths relative to where you host "out/"
@@ -91,22 +104,38 @@ export async function build(opts) {
             w: largeInfo.width,
             h: largeInfo.height,
           },
-          // Optional: you can derive alt from filename if you want
-          alt: "wedding photo credit greenimagingphotovideo.com",
+          alt: "",
         });
 
+        item.__order = orderKey;
+
         manifestItems.push(item);
+        console.log(`processed ${count}/${files.length}`);
+        count++;
       }),
     ),
   );
 
-  // Stable ordering (since parallel processing scrambles push order)
-  manifestItems.sort((a, b) => a.id - b.id);
+  // Stable filename ordering:
+  // 1) Lareau_Wedding-### first, numeric asc
+  // 2) everything else after, in discovery/processed order
+  manifestItems.sort((a, b) => {
+    const ao = a.__order,
+      bo = b.__order;
+
+    if (ao.group !== bo.group) return ao.group - bo.group;
+    if (ao.group === 0 && ao.n !== bo.n) return ao.n - bo.n;
+    return ao.order - bo.order;
+  });
+
+  for (const item of manifestItems) delete item.__order;
+  for (const itm of manifestItems) console.log(itm);
 
   const manifest = finalizeManifest(manifestItems);
 
   await writeJson(manifestPath, manifest);
 
+  console.log();
   console.log(`Built ${manifestItems.length} images`);
   console.log(`- Thumbs: ${thumbDir}`);
   console.log(`- Large:  ${largeDir}`);
