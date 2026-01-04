@@ -1,0 +1,24 @@
+{
+  "name": "wedding-website-cli",
+  "version": "0.0.1",
+  "description": "Wedding Website CLI",
+  "type": "module",
+  "bin": {
+    "wg": "./bin/wg"
+  },
+  "scripts": {
+    "wg": "node ./bin/wg",
+    "build": "node ./bin/wg build"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "exiftool-vendored": "^29.3.0",
+    "fast-glob": "^3.3.3",
+    "p-limit": "^6.2.0",
+    "sharp": "^0.33.5",
+    "uuid": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
