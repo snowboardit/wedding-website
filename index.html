@@ -43,13 +43,13 @@
         function loadJsFromCDN(js) {
             if (js === "waypoints.js") {
                 document.write(
-                    '<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>'
+                    '<script async src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>'
                 );
             }
 
             if (js === "jquery.js") {
                 document.write(
-                    '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>'
+                    '<script async src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>'
                 );
             }
         }
@@ -63,23 +63,17 @@
     <link rel="stylesheet" href="css/queries.css" />
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')" />
 
+    <!-- this must be loaded in the head -->
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 
 <body id="top">
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">
-                You are using an <strong>outdated</strong> browser. Please
-                <a href="https://browsehappy.com/">upgrade your browser</a> to
-                improve your experience.
-            </p>
-        <![endif]-->
-    <section class="hero">
+    <section id="hero-engaged" class="hero inactive">
         <section class="navigation">
             <header>
                 <div class="header-content">
                     <div class="logo">
-                        <a href="#"><img src="img/logo.png" alt="Logo" /></a>
+                        <a href="#top"><img src="img/logo.png" alt="Logo" /></a>
                     </div>
                     <div class="header-nav">
                         <nav>
@@ -96,13 +90,9 @@
                                 </li>
                             </ul>
                             <ul class="member-actions">
-                                <!-- <li>
-                                        <a
-                                            href="#rsvp"
-                                            class="btn-white btn-small"
-                                            >RSVP</a
-                                        >
-                                    </li> -->
+                                <li>
+                                    <a id="hitched" href="#" class="btn btn-white">🎉 Married</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -122,24 +112,61 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                    <div class="col-sm-4 hidden-xs"></div>
-                    <div class="text-center col-sm-4 hidden-xs">
-                        <a
-                            href="#rsvp"
-                            class="btn btn-accent btn-large rsvp-btn"
-                            >RSVP</a
-                        >
-                    </div>
-                    <div class="col-sm-4 hidden-xs"></div>
-                </div> -->
         </div>
         <div class="down-arrow floating-arrow">
             <a href="#invitation"><i class="fa fa-angle-down"></i></a>
         </div>
     </section>
 
-    <section id="invitation" class="section-padding">
+    <section id="hero-hitched" class="hero hitched">
+        <section class="navigation">
+            <header class="dark">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="#top"><img src="img/logo.png" alt="Logo" /></a>
+                    </div>
+                    <div class="header-nav">
+                        <nav>
+                            <ul class="primary-nav dark">
+                                <li><a href="#outro">Thank You</a></li>
+                                <li>
+                                    <a href="#where">Location</a>
+                                </li>
+                                <li>
+                                    <a href="#wed-pics">Photos</a>
+                                </li>
+                                <li>
+                                    <a href="#registry">Registry</a>
+                                </li>
+                            </ul>
+                            <ul class="member-actions dark">
+                                <li>
+                                    <a id="engagement" href="#" class="btn btn-white">💍 Engagement</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="navicon">
+                        <a class="nav-toggle" href="#"><span></span></a>
+                    </div>
+                </div>
+            </header>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="text-center hero-content">
+                        <img alt="max and erica logo" id="hero-logo" src="img/logo-lg.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="down-arrow floating-arrow">
+            <a href="#outro"><i class="fa fa-angle-down"></i></a>
+        </div>
+    </section>
+
+    <section id="invitation" class="section-padding inactive">
         <div class="container">
             <div class="row">
                 <div class="text-center col-md-2"></div>
@@ -173,7 +200,7 @@
         </div>
     </section>
 
-    <section id="intro" class="section-padding">
+    <section id="intro" class="section-padding inactive">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 hidden-sm hidden-xs">
@@ -194,7 +221,7 @@
                         The Office (US). They hit it off immediately, finding
                         common interests in snowboarding, life experiences,
                         ambition, and humor. Today, they live on a small
-                        farm with their dog, cats, and horses. Their love
+                        farm with their dogs, cat, and horses. Their love
                         for one another grows stronger each day.
                     </p>
                 </div>
@@ -213,7 +240,38 @@
         </div>
     </section>
 
-    <section id="eng-pics" class="section-padding">
+    <section id="outro" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <img alt="max and erica left" src="img/married/erica-shredding-min.png" class="wp1" />
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center col-md-12">
+                        <h1>&#127881;<!-- party popper --></h1>
+                        <h2 class="header">We did it!</h2>
+                    </div>
+                    <p>
+                        Thank you to everyone who has supported us! We love and appreciate all of you.
+                    </p>
+                </div>
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <img alt="max and erica right" src="img/married/max-shredding-wide-min.png" class="wp2" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg">
+                    <img alt="max and erica formal attire old" src="img/married/erica-shredding-min.png" class="wp8" />
+                </div>
+                <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg">
+                    <img alt="max and erica formal attire old" src="img/married/max-shredding-wide-min.png"
+                        class="wp9" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eng-pics" class="section-padding inactive">
         <div class="container-fluid">
             <div class="row">
                 <div class="text-center col-md-12">
@@ -273,7 +331,7 @@
         </div>
     </section>
 
-    <section class="events section-padding" id="events">
+    <section id="events" class="events section-padding inactive">
         <div class="container">
             <div id="events-header" class="row">
                 <div class="col-md-12">
@@ -294,7 +352,8 @@
                             </p>
                             <p title="Location" class="attr">
                                 <i class="fa fa-compass"></i><a
-                                    href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
+                                    href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf
+                                Mountain
                             </p>
                             <p title="Attire" class="attr attire">
                                 <i class="fa fa-shirt"></i>Ski Gear | Casual | Reggae
@@ -315,7 +374,8 @@
                             </p>
                             <p title="Location" class="attr">
                                 <i class="fa fa-compass"></i><a
-                                    href="https://maps.app.goo.gl/tWq8DdGfMxbi5zwDA">Directions</a> | Max & Erica's Ski
+                                    href="https://maps.app.goo.gl/tWq8DdGfMxbi5zwDA">Directions</a> | Max & Erica's
+                                Ski
                                 Chalet, 2016
                                 Brook Falls Road Carrabassett Valley, ME 04947
                             </p>
@@ -337,7 +397,8 @@
                             </p>
                             <p title="Location" class="attr">
                                 <i class="fa fa-compass"></i><a
-                                    href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf Mountain
+                                    href="https://maps.app.goo.gl/3GrNnneRkWGbQmXNA">Directions</a> | Sugarloaf
+                                Mountain
                                 - Base Lodge
                             </p>
                             <p title="Attire" class="attr attire">
@@ -403,7 +464,8 @@
                         </p>
                     </div>
                     <p>
-                        The ski crew meets the ground crew at the bottom for a bubbly champagne toast to celebrate the
+                        The ski crew meets the ground crew at the bottom for a bubbly champagne toast to celebrate
+                        the
                         newlyweds — cheers!
                     </p>
 
@@ -455,7 +517,8 @@
                         </p>
                         <p title="Location" class="attr">
                             <i class="fa fa-compass"></i><a
-                                href="https://maps.app.goo.gl/Q9r6DmJ6bK13UeTA6">Directions</a> | Deb & Paul's Condo,
+                                href="https://maps.app.goo.gl/Q9r6DmJ6bK13UeTA6">Directions</a> | Deb & Paul's
+                            Condo,
                             2135 Crocker Mountain Rd, Carrabassett Valley, ME 04947
                         </p>
                         <p title="Attire" class="attr attire">
@@ -463,7 +526,8 @@
                         </p>
                     </div>
                     <p>
-                        Join us for a special dinner with our closest family and friends. Delicious food, great company,
+                        Join us for a special dinner with our closest family and friends. Delicious food, great
+                        company,
                         and plenty of celebration await!
                     </p>
 
@@ -503,7 +567,6 @@
                         </div> -->
             </div>
         </div>
-        </div>
     </section>
 
     <section id="where" class="section-padding">
@@ -530,14 +593,35 @@
         </div>
     </section>
 
-    <section id="map">
-        <iframe id="map-canvas"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d884.4380975850557!2d-70.31533336401586!3d45.032129695079405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb11ca36dda53d7%3A0xc4e7f50a8aaea6a9!2sSugarloaf%20Mountain!5e1!3m2!1sen!2sus!4v1735752671378!5m2!1sen!2sus"
-            width="600" height="450" allowfullscreen="false" loading="async"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section id="wed-pics" class="section-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="text-center col-md-12">
+                    <h2 class="header">Photos</h2>
+                </div>
+            </div>
+
+            <!-- Photos get appended here -->
+            <div id="wed-pics-grid" class="row wed-masonry"></div>
+
+            <!-- IntersectionObserver sentinel -->
+            <div id="wed-pics-sentinel" style="height: 1px;"></div>
+        </div>
+
+        <div class="container">
+            <div class="row hidden-lg hidden-md hidden-xs">
+                <div class="col-xs-12 section-border section-padding"></div>
+            </div>
+        </div>
     </section>
 
-    <section class="section-padding" id="registry">
+    <section id="map" class="inactive">
+        <iframe id="map-canvas"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d884.4380975850557!2d-70.31533336401586!3d45.032129695079405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb11ca36dda53d7%3A0xc4e7f50a8aaea6a9!2sSugarloaf%20Mountain!5e1!3m2!1sen!2sus!4v1735752671378!5m2!1sen!2sus"
+            width="600" height="450" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section id="registry" class="section-padding">
         <a class="header zola-registry-embed" href="www.zola.com/wedding/maxandericaapril12"
             data-registry-key="maxandericaapril12">
             Our Zola Wedding Registry
@@ -547,116 +631,6 @@
         </script>
     </section>
 
-    <!-- <section class="text-center rsvp" id="rsvp">
-            <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button
-                                type="button"
-                                class="close"
-                                data-dismiss="modal"
-                                aria-label="Close"
-                            >
-                                <span>&times;</span>
-                            </button>
-                            <div class="section-padding">
-                                <h3>Thank you!</h3>
-                                <p>
-                                    We are glad to see you join us on our big
-                                    day.
-                                </p>
-                                <div id="add-to-cal"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <h3>What are you waiting for?</h3>
-                        <p>
-                            Please RSVP by February 1st, 2025. We can't wait to
-                            celebrate with you!
-                        </p>
-                        <form
-                            id="rsvp-form"
-                            class="rsvp-form"
-                            action=""
-                            method="POST"
-                        >
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-envelope"></i
-                                        ><input
-                                            type="email"
-                                            name="email"
-                                            class=""
-                                            placeholder="Your email"
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-user"></i
-                                        ><input
-                                            name="name"
-                                            class=""
-                                            placeholder="Your name"
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-users"></i
-                                        ><input
-                                            type="number"
-                                            name="extras"
-                                            class=""
-                                            min="0"
-                                            max="2"
-                                            placeholder="Husband/Wife or kids"
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-key"></i
-                                        ><input
-                                            type="number"
-                                            name="invite_code"
-                                            id="invite_code"
-                                            class=""
-                                            min="0"
-                                            placeholder="Invite code"
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12" id="alert-wrapper"></div>
-                            </div>
-                            <button class="btn-fill rsvp-btn">
-                                Yes, that's me!
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
     <footer class="section-padding">
         <div class="container">
             <div class="row">
@@ -664,7 +638,8 @@
                     <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
                     <div id="install-container" style="display: none;">
                         <h3>Install Our Wedding App!</h3>
-                        <p style="margin-bottom: 0;padding-bottom: 1rem;">Get offline access and update notifications!
+                        <p style="margin-bottom: 0;padding-bottom: 1rem;">Get offline access and update
+                            notifications!
                         </p>
                         <button id="install-button" class="btn btn-default" style="margin-bottom: 4rem">Install</button>
                     </div>
@@ -682,12 +657,13 @@
     </footer>
     <script src="/service-worker.min.js"></script>
     <script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
-    <script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
-    <script src="js/jquery.fancybox.pack.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/jquery.flexslider-min.js"></script>
-    <script src="js/vendor/ouical.js"></script>
-    <script src="js/scripts.min.js"></script>
+    <script async src="node_modules/waypoints/lib/jquery.waypoints.min.js"
+        onerror="loadJsFromCDN('waypoints.js')"></script>
+    <script async src="js/jquery.fancybox.pack.js"></script>
+    <script async src="js/vendor/bootstrap.min.js"></script>
+    <script async src="js/jquery.flexslider-min.js"></script>
+    <script async src="js/vendor/ouical.js"></script>
+    <script async src="js/scripts.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NEEDTQLWNT"></script>
     <script>

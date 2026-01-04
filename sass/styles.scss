@@ -67,6 +67,16 @@ ul li {
 section .header {
   padding-bottom: 30px;
 }
+.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: initial;
+}
+.inactive {
+  position: absolute !important;
+  opacity: 0;
+  pointer-events: none;
+}
 .section-padding {
   padding: layout.$section-padding;
 }
@@ -116,6 +126,67 @@ section .header {
   background-color: #000;
   border-radius: 4px;
 }
+
+/* ==========================================================================
+Just Married Lift Ticket
+========================================================================== */
+#just-married {
+  width: 200px;
+  height: 100dvh;
+  display: block;
+  transform: translateX(-20px) translateY(-34px);
+}
+
+/* ==========================================================================
+Wedding Pics Gallery
+========================================================================== */
+/* Masonry container */
+#wed-pics-grid.wed-masonry {
+  column-gap: 16px;
+  column-count: 4; /* desktop default */
+}
+
+/* Responsive column counts */
+@media (max-width: 1200px) {
+  #wed-pics-grid.wed-masonry {
+    column-count: 3;
+  }
+}
+@media (max-width: 992px) {
+  #wed-pics-grid.wed-masonry {
+    column-count: 2;
+  }
+}
+@media (max-width: 576px) {
+  #wed-pics-grid.wed-masonry {
+    column-count: 1;
+  }
+}
+
+/* Each masonry item */
+#wed-pics-grid.wed-masonry .wed-masonry-item {
+  break-inside: avoid; /* keep each tile intact */
+  margin: 0 0 16px;
+  width: 100%;
+  display: inline-block; /* required for column masonry */
+}
+
+/* Make images fluid */
+#wed-pics-grid.wed-masonry img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure your overlay covers the image */
+#wed-pics-grid.wed-masonry .img-wrap {
+  position: relative;
+}
+#wed-pics-grid.wed-masonry .overlay {
+  position: absolute;
+  inset: 0;
+}
+
 /* ==========================================================================
 Animations
 ========================================================================== */
@@ -284,6 +355,12 @@ Navigation
 /* ==========================================================================
 Hero
 ========================================================================== */
+#hero-hitched {
+  div.header-content {
+    color: $black-color;
+  }
+}
+
 .hero {
   height: 100dvh;
   background: url("../img/hero-min.jpg") center center;
@@ -293,8 +370,13 @@ Hero
   background-size: cover;
   position: relative;
 
+  &.hitched {
+    background: url("../img/married/hero-hitched-min.jpg") center center;
+  }
+
   #hero-logo {
     opacity: 90%;
+    display: block;
   }
   .rsvp-btn {
     &:hover {
@@ -320,10 +402,17 @@ Hero
     place-items: center;
 
     .hero-content {
-      padding-top: 24%; // max's favorite number :)
-    }
-    .hero-content img {
-      width: 75%;
+      padding-top: 50%;
+      display: grid;
+      place-items: center;
+
+      img {
+        width: 75%;
+      }
+
+      canvas {
+        display: block;
+      }
     }
   }
 }
@@ -389,7 +478,7 @@ header {
         color: $txt-light;
 
         &:hover {
-          color: $accent-color-hover;
+          color: $white-color;
         }
       }
     }
@@ -433,13 +522,15 @@ Intro
   width: 80%;
 }
 
-#intro {
+#intro,
+#outro {
   img {
     width: 100%;
     height: auto;
   }
 }
-#intro p {
+#intro p,
+#outro p {
   text-align: center;
 }
 
@@ -754,7 +845,8 @@ Instagram
 /* ==========================================================================
 Engagement Pics
 ========================================================================== */
-#eng-pics {
+#eng-pics,
+#wed-pics {
   img {
     width: 100%;
     height: auto;
@@ -902,16 +994,28 @@ Google map
   margin-top: 40px;
   padding: 50px 60px;
   background: #fff;
-  -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
-  transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
+  -webkit-transition:
+    opacity 0.5s,
+    visibility 0.6s,
+    margin-top 0.5s;
+  transition:
+    opacity 0.5s,
+    visibility 0.6s,
+    margin-top 0.5s;
 }
 #btn-show-content {
   padding: 20px;
   background: #fff;
   cursor: pointer;
   display: inline-block;
-  -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
-  transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
+  -webkit-transition:
+    opacity 0.5s,
+    visibility 0.6s,
+    margin-top 0.5s;
+  transition:
+    opacity 0.5s,
+    visibility 0.6s,
+    margin-top 0.5s;
 }
 .toggle-map-content {
   opacity: 0;
